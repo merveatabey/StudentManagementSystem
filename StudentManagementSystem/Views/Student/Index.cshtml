@@ -1,0 +1,56 @@
+﻿@using EntityLayer.Concrete
+@model List<StudentInfo>
+<div class="col-lg-24 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Öğrenci Listesi</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>    
+                            <th>#</th>
+                            <th>TC</th>
+                            <th>Ad</th>
+                            <th>Soyad</th>
+                            <th>Numara</th>
+                            <th>Sınıf</th>
+                            <th>Doğum Tar.</th>
+                            <th>Telefon</th>
+                            <th>Mail</th>
+                            <th>Adres</th>
+                            <th>Devamsızlık</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.StdID</td>
+                                <td>@item.TC</td>
+                                <td>@item.StdName</td>
+                                <td>@item.StdSurname</td>
+                                <td>@item.StdNum</td>
+                                <td>@item.StdClass</td>
+                                <td>@item.StdBirthDay</td>
+                                <td>@item.Phone</td>
+                                <td>@item.Mail</td>
+                                <td>@item.Address</td>
+                                <td>@item.AbsentDay</td>
+
+                                <td><a href="/Student/DeleteStudent/@item.StdID" class="btn btn-outline-danger">Sil</a></td>
+                                <td><a href="/Student/EditStudent/@item.StdID" class=" btn btn-outline-success">Güncelle</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>   
+                 <a href="/Student/AddStudent/" class=" btn btn-outline-info">Yeni Öğrenci Ekle</a>
+                 <a href="/Note/Index/" class=" btn btn-outline-danger">Not Tablosuna Git</a>      
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

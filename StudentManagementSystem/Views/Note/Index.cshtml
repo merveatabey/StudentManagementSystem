@@ -1,0 +1,50 @@
+﻿@model List<StudentManagementSystem.Models.StudentWithCourseViewModel>
+<div class="col-lg-24 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Öğrenci Not Listesi</h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Ad Soyad</th>
+                            <th>Numara</th>
+                            <th>Sınıf</th>
+                            <th>Ders Adı</th>
+                            <th>1.Sınav</th>
+                            <th>2.Sınav</th>
+                            <th>Ortalama</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Courses.Id</td>
+                                <td>@item.StudentInfo.StdName @item.StudentInfo.StdSurname</td>
+                                <td>@item.StudentInfo.StdNum</td>
+                                <td>@item.StudentInfo.StdClass</td>
+                                <td>@item.Courses.CourseName</td>
+                                <td>@item.Courses.Exam1</td>
+                                <td>@item.Courses.Exam2</td>
+                                <td>@item.Courses.Average</td>
+
+                                <td><a href="/Note/DeleteNote/@item.Courses.Id" class="btn btn-outline-danger">Sil</a></td>
+                                <td><a href="/Note/EditNote/@item.Courses.Id" class=" btn btn-outline-success">Güncelle</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <a href="/Note/AddNote/" class=" btn btn-outline-info">Not Ekle</a>
+                <a href="/Student/Index/" class=" btn btn-outline-dark">Geri</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

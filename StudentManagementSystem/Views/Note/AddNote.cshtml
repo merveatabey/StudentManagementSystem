@@ -1,0 +1,39 @@
+﻿@model EntityLayer.Concrete.Courses
+
+@*Html.BeginForm 3 tane paranetre alır : 1.si Action'ın ismi, 2.si conroller'ın ismi, 3.sü form methodun türü*@
+@using (Html.BeginForm("AddNote", "Note", FormMethod.Post))
+{
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-description"> Not Paneli </p>
+                <form class="forms-sample">
+                    <div class="form-group">
+                        <label>Ders Adı</label>
+                        <input type="text" class="form-control" name="CourseName">
+                    </div>
+                    <div class="form-group">
+                        <label>Alan ID</label>
+                        <input type="text" class="form-control" name="DepartmentID">
+                    </div>
+                    <div class="form-group">
+                        <label>Öğrenci ID</label>
+                        <input type="text" class="form-control" name="StdID">
+                    </div>
+                    <div class="form-group">
+                        <label>1.Sınav</label>
+                        <input type="text" class="form-control" name="Exam1">
+                    </div>
+                    <div class="form-group">
+                        <label>2.Sınav</label>
+                        <input type="text" class="form-control" name="Exam2">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+}

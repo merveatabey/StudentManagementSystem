@@ -1,0 +1,51 @@
+﻿@model EntityLayer.Concrete.StudentInfo
+
+
+@*Html.BeginForm 3 tane paranetre alır : 1.si Action'ın ismi, 2.si conroller'ın ismi, 3.sü form methodun türü*@
+@using (Html.BeginForm("EditStudent", "Student", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.StdID)
+                //id'yi tut
+    <br />
+     <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-description"> Öğrenci Güncelleme Paneli</p>
+                <form class="forms-sample">
+    @Html.Label("TC")
+    @Html.TextBoxFor(x=>x.StdName,new {@class = "form-control"})
+    <br />
+    <label>Ad</label>
+    @Html.TextBoxFor(x=>x.StdSurname,new {@class = "form-control"})
+    <br />
+    <label>Soyad</label>
+    @Html.TextBoxFor(x=>x.StdSurname,new {@class = "form-control"})
+    <br />
+    <label>Numara</label>
+    @Html.TextBoxFor(x=>x.StdNum,new {@class = "form-control"})
+    <br />
+    <label>Sınıf</label>
+    @Html.TextBoxFor(x=>x.StdClass,new {@class = "form-control"})
+    <br />
+    <label>Doğum Tarihi</label>
+    @Html.TextBoxFor(x=>x.StdBirthDay,new {@class = "form-control"})
+    <br />
+    <label>Telefon</label>
+    @Html.TextBoxFor(x=>x.Phone,new {@class = "form-control"})
+    <br />
+    <label>Mail</label>
+    @Html.TextBoxFor(x=>x.Mail,new {@class = "form-control"})
+    <br />
+    <label>Adres</label>
+    @Html.TextBoxFor(x=>x.Address,new {@class = "form-control"})
+    <br />
+    <label>Devamsızlık Sayısı</label>
+    @Html.TextBoxFor(x=>x.AbsentDay,new {@class = "form-control"})
+    <br />
+    <button class=" btn btn-info">Güncelle</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+}

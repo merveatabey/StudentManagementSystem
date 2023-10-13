@@ -1,0 +1,37 @@
+﻿@model EntityLayer.Concrete.Courses
+
+
+@*Html.BeginForm 3 tane paranetre alır : 1.si Action'ın ismi, 2.si conroller'ın ismi, 3.sü form methodun türü*@
+@using (Html.BeginForm("EditNote", "Note", FormMethod.Post))
+{
+    @Html.HiddenFor(x=>x.Id)
+                //id'yi tut
+    <br />
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <p class="card-description"> Öğrenci Güncelleme Paneli</p>
+                <form class="forms-sample">
+                    @Html.Label("Ders Adı")
+                    @Html.TextBoxFor(x=>x.CourseName,new {@class = "form-control"})
+                    <br />
+                    <label>Alan ID</label>
+                    @Html.TextBoxFor(x=>x.DepartmentID,new {@class = "form-control"})
+                    <br />
+                    <label>Öğrenci ID</label>
+                    @Html.TextBoxFor(x=>x.StdID,new {@class = "form-control"})
+                    <br />
+                    <label>1.Sınav</label>
+                    @Html.TextBoxFor(x=>x.Exam1,new {@class = "form-control"})
+                    <br />
+                    <label>2.Sınav</label>
+                    @Html.TextBoxFor(x=>x.Exam2,new {@class = "form-control"})
+                    <br />
+                    <button class=" btn btn-info">Güncelle</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+}
+
